@@ -1,0 +1,493 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hotel VILLAS DE MORELOS</title>
+
+<style>
+
+/* CONFIGURACION GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #eee9df;
+    font-family: Arial, sans-serif;
+    color: #252525;
+}
+
+:root {
+    --dorado: #b99a55;
+    --negro: #171717;
+    --beige: #e8dfce;
+}
+
+/* CAJA PRINCIPAL 1200 PX */
+
+.principal {
+    width: 1200px;
+    max-width: 100%;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* IMAGEN SUPERIOR 400 PX */
+
+.imagen-principal {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 10px;
+
+    border: 4px solid var(--dorado);
+
+    background:
+    linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.5)),
+    url("https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1600");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.imagen-principal h1 {
+    color: var(--dorado);
+    font-family: Georgia, serif;
+    font-size: 45px;
+}
+
+.imagen-principal p {
+    color: white;
+    font-size: 17px;
+    letter-spacing: 5px;
+    margin-top: 15px;
+}
+
+/* SEPARACION */
+
+.separacion {
+    height: 10px;
+}
+
+/* MENU */
+
+.menu {
+    width: 100%;
+    height: 45px;
+    background: var(--negro);
+    border: 2px solid var(--dorado);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu a {
+    color: var(--dorado);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.menu a:hover {
+    color: white;
+}
+
+/* CONTENEDOR GRANDE */
+
+.contenedor {
+    width: 100%;
+    border: 3px solid var(--dorado);
+    background: #fffdf8;
+    padding: 25px;
+    margin-top: 20px;
+}
+
+/* TITULO */
+
+.titulo-contenedor {
+    text-align: center;
+    color: var(--dorado);
+    margin-bottom: 20px;
+    font-family: Georgia, serif;
+    font-size: 25px;
+}
+
+/* CUATRO CAJAS 2 X 2 */
+
+.contenido {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+}
+
+/* CADA CAJA */
+
+.caja {
+    border: 2px solid #c2a568;
+    background: #f5f0e6;
+    padding: 15px;
+    text-align: center;
+}
+
+/* IMAGENES */
+
+.caja img {
+    width: 100%;
+    height: 145px;
+    object-fit: cover;
+    border: 2px solid var(--dorado);
+}
+
+.caja h3 {
+    color: #96763b;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    font-family: Georgia, serif;
+}
+
+.caja p {
+    color: #555;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+/* BOTONES */
+
+.caja button {
+    background: var(--negro);
+    color: var(--dorado);
+    border: 1px solid var(--dorado);
+    padding: 8px 20px;
+    cursor: pointer;
+}
+
+/* PIE DE PAGINA */
+
+.pie-titulo {
+    text-align: center;
+    color: #a48645;
+    font-family: Georgia, serif;
+    margin-bottom: 5px;
+    font-size: 22px;
+}
+
+.pie {
+    width: 100%;
+    min-height: 120px;
+    margin-top: 15px;
+
+    border: 3px solid var(--dorado);
+    background: var(--negro);
+    padding: 20px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+/* COLUMNA IZQUIERDA */
+
+.pie-informacion {
+    padding: 10px 15px;
+    border-right: 2px solid var(--dorado);
+}
+
+.pie-informacion h3 {
+    color: var(--dorado);
+    margin-bottom: 8px;
+    font-family: Georgia, serif;
+}
+
+.pie-informacion p {
+    color: #ddd;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* COLUMNA DERECHA */
+
+.pie-links {
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.pie-links h3 {
+    color: var(--dorado);
+    margin-bottom: 10px;
+}
+
+.pie-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    margin: 0 7px;
+}
+
+.pie-links a:hover {
+    color: var(--dorado);
+}
+
+/* DERECHOS RESERVADOS */
+
+.derechos {
+    text-align: center;
+    color: #aaa;
+    background: var(--negro);
+    padding: 12px;
+    font-size: 11px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 700px) {
+
+    .principal {
+        padding: 8px;
+        margin: 10px auto;
+    }
+
+    .imagen-principal {
+        height: 300px;
+    }
+
+    .imagen-principal h1 {
+        font-size: 30px;
+    }
+
+    .menu {
+        gap: 5px;
+        flex-wrap: wrap;
+        height: auto;
+        padding: 12px 5px;
+    }
+
+    .menu a {
+        font-size: 11px;
+    }
+
+    .contenedor {
+        padding: 15px;
+    }
+
+    .contenido {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .caja {
+        padding: 8px;
+    }
+
+    .caja img {
+        height: 110px;
+    }
+
+    .caja h3 {
+        font-size: 14px;
+    }
+
+    .pie {
+        grid-template-columns: 1fr 1fr;
+        padding: 12px;
+    }
+
+    .pie-informacion,
+    .pie-links {
+        padding: 5px;
+    }
+
+    .pie-links a {
+        display: block;
+        margin: 5px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="principal">
+
+    <!-- IMAGEN PRINCIPAL -->
+
+    <section class="imagen-principal">
+
+        <div>
+            <h1>HOTEL VILLAS DE MORELOS</h1>
+            <p>LO MEJOR DE LO MEJOR</p>
+        </div>
+
+    </section>
+
+    <!-- SEPARACION -->
+
+    <div class="separacion"></div>
+
+    <!-- MENU -->
+
+    <nav class="menu">
+
+        <a href="#inicio">Inicio</a>
+        <a href="#habitaciones">Habitaciones</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#experiencias">Experiencias</a>
+
+    </nav>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+
+    <main class="contenedor" id="inicio">
+
+        <h2 class="titulo-contenedor">
+            NUESTRO HOTEL
+        </h2>
+
+        <!-- CUATRO CAJAS -->
+
+        <section class="contenido">
+
+            <!-- CAJA 1 -->
+
+            <article class="caja" id="habitaciones">
+
+                <img
+                src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=700"
+                alt="Habitaciones del hotel">
+
+                <h3>Habitaciones</h3>
+
+                <p>
+                    Habitaciones de lujo con
+                    comodidad y elegancia.
+                </p>
+
+                <button>Ver más</button>
+
+            </article>
+
+            <!-- CAJA 2 -->
+
+            <article class="caja">
+
+                <img
+                src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=700"
+                alt="Piscina del hotel">
+
+                <h3>Piscina</h3>
+
+                <p>
+                    Disfruta de nuestras instalaciones
+                    exclusivas y relajantes.
+                </p>
+
+                <button>Ver más</button>
+
+            </article>
+
+            <!-- CAJA 3 -->
+
+            <article class="caja" id="servicios">
+
+                <img
+                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700"
+                alt="Restaurante del hotel">
+
+                <h3>Restaurante</h3>
+
+                <p>
+                    Gastronomía de alta calidad
+                    para nuestros huéspedes.
+                </p>
+
+                <button>Ver más</button>
+
+            </article>
+
+            <!-- CAJA 4 -->
+
+            <article class="caja" id="experiencias">
+
+                <img
+                src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=700"
+                alt="Spa del hotel">
+
+                <h3>Spa de lujo</h3>
+
+                <p>
+                    Relajación y bienestar
+                    en un ambiente exclusivo.
+                </p>
+
+                <button>Ver más</button>
+
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- SEPARACION -->
+
+    <div class="separacion"></div>
+
+    <!-- PIE DE PAGINA -->
+
+    <h2 class="pie-titulo">PIE DE PÁGINA</h2>
+
+    <footer class="pie">
+
+        <!-- INFORMACION IZQUIERDA -->
+
+        <div class="pie-informacion">
+
+            <h3>HOTEL VILLAS DE MORELOS</h3>
+
+            <p>
+                Hotel de lujo y exclusividad.
+                Calidad, elegancia y comodidad.
+            </p>
+
+        </div>
+
+        <!-- LINKS DERECHA -->
+
+        <div class="pie-links">
+
+            <h3>LINKS</h3>
+
+            <a href="#inicio">Inicio</a>
+            <a href="#habitaciones">Habitaciones</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#experiencias">Spa</a>
+
+        </div>
+
+    </footer>
+
+    <!-- DERECHOS RESERVADOS -->
+
+    <div class="derechos">
+
+        © 2026 HOTEL VILLAS DE MORELOS |
+        TODOS LOS DERECHOS RESERVADOS A ALDO BAHENA
+
+    </div>
+
+</div>
+
+</body>
+</html>
